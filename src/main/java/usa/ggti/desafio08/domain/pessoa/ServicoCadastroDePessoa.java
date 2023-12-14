@@ -3,6 +3,8 @@ package usa.ggti.desafio08.domain.pessoa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ServicoCadastroDePessoa {
     @Autowired
@@ -14,4 +16,7 @@ public class ServicoCadastroDePessoa {
         return new DadosDetalhamentoPessoaDto(pessoa);
     }
 
+    public List<DadosDetalhamentoPessoaDto> listar() {
+        return pessoaRepository.findAll().stream().map(DadosDetalhamentoPessoaDto::new).toList();
+    }
 }
