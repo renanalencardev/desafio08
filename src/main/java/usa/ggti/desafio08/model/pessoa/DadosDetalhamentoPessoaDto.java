@@ -1,4 +1,4 @@
-package usa.ggti.desafio08.domain.pessoa;
+package usa.ggti.desafio08.model.pessoa;
 
 public record DadosDetalhamentoPessoaDto(Long id, String nome, String email, String idade) {
     public DadosDetalhamentoPessoaDto(Pessoa pessoa){

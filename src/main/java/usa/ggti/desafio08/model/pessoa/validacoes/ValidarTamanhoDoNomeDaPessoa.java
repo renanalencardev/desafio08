@@ -1,7 +1,7 @@
-package usa.ggti.desafio08.domain.pessoa.validacoes;
+package usa.ggti.desafio08.model.pessoa.validacoes;
 
 import org.springframework.stereotype.Component;
-import usa.ggti.desafio08.domain.pessoa.DadosCadastroPessoaDto;
+import usa.ggti.desafio08.model.pessoa.DadosCadastroPessoaDto;
 
 @Component
 public class ValidarTamanhoDoNomeDaPessoa implements ValidadorCadastroDePessoa{

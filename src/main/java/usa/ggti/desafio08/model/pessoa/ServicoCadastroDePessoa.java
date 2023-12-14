@@ -1,8 +1,8 @@
-package usa.ggti.desafio08.domain.pessoa;
+package usa.ggti.desafio08.model.pessoa;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import usa.ggti.desafio08.domain.pessoa.validacoes.ValidadorCadastroDePessoa;
+import usa.ggti.desafio08.model.pessoa.validacoes.ValidadorCadastroDePessoa;
 
 import java.util.List;
 
