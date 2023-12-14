@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
-import usa.ggti.desafio08.domain.pessoa.DadosCadastroPessoaDto;
-import usa.ggti.desafio08.domain.pessoa.DadosDetalhamentoPessoaDto;
-import usa.ggti.desafio08.domain.pessoa.ServicoCadastroDePessoa;
+import usa.ggti.desafio08.model.pessoa.DadosCadastroPessoaDto;
+import usa.ggti.desafio08.model.pessoa.DadosDetalhamentoPessoaDto;
+import usa.ggti.desafio08.model.pessoa.ServicoCadastroDePessoa;
 
 import java.util.List;
 

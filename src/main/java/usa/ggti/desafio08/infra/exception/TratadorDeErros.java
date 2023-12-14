@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import usa.ggti.desafio08.domain.pessoa.validacoes.ValidacaoPessoaException;
+import usa.ggti.desafio08.model.pessoa.validacoes.ValidacaoPessoaException;
 
 @RestControllerAdvice
 public class TratadorDeErros {
