@@ -13,13 +13,11 @@ public class ServicoCadastroDePessoa {
     private PessoaRepository pessoaRepository;
     @Autowired
     private List<ValidadorCadastroDePessoa> validacoes;
-
+    @Autowired
+    private PadronizarNome padronizarNome;
     public DadosDetalhamentoPessoaDto cadastrar(DadosCadastroPessoaDto dados){
         validacoes.forEach(v -> v.validar(dados));
-
-        PadronizarNome padronizarNome = new PadronizarNome();
         String nome = padronizarNome.primeiraLetraMaiuscula(dados.nome());
-
         var pessoa = new Pessoa(new DadosCadastroPessoaDto(nome, dados.email(), dados.idade()));
         pessoaRepository.save(pessoa);
         return new DadosDetalhamentoPessoaDto(pessoa);

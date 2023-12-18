@@ -13,7 +13,7 @@ public class ValidarEmailExistente implements ValidadorCadastroDePessoa{
     public void validar(DadosCadastroPessoaDto dados) {
         var pessoa = pessoaRepository.existsByEmail(dados.email());
         if(pessoa){
-            throw new ValidacaoPessoaException("Email já cadastrado"); 
+            throw new ValidacaoPessoaException("Email já cadastrado");
         }
 
     }
