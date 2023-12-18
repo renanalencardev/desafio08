@@ -9,5 +9,4 @@ public record DadosCadastroPessoaDto(
         String email,
         @NotNull(message = "O campo idade não pode ser nulo")
         String idade) {
-
 }
