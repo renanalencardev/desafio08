@@ -16,10 +16,15 @@ import java.util.List;
 public class ServicoCadastroDePessoa {
     @Autowired
     private PessoaRepository pessoaRepository;
-    @Autowired
+
     private List<ValidadorCadastroDePessoa> validacoes;
+
     @Autowired
     private PadronizarNome padronizarNome;
+
+    public ServicoCadastroDePessoa(List<ValidadorCadastroDePessoa> validacoes){
+        this.validacoes = validacoes;
+    }
     @Transactional
     public DadosDetalhamentoPessoaDto cadastrar(DadosCadastroPessoaDto dados){
         //validacoes.forEach(validador -> validador.validar(dados));
