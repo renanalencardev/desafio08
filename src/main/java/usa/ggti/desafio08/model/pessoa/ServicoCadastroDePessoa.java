@@ -56,16 +56,17 @@ public class ServicoCadastroDePessoa {
     }
     @Transactional
     public DadosDetalhamentoPessoaDto atualizar(DadosAtualizacaoPessoaDto dados, Long id) {
-        if(!pessoaRepository.existsById(id)){
-            throw new ValidacaoListagemPessoaException("Usuário não encontrado na base de dados");
+        if (!pessoaRepository.existsById(id)) {
+            throw new ValidacaoListagemPessoaException("Pessoa não encontrada");
         }
-        var nome = dados.nome();
-        if(nome != null){
-            nome = padronizarNome.primeiraLetraMaiuscula(dados.nome());
-        }
-        var dadosCorrigidos = new DadosAtualizacaoPessoaDto(nome, dados.email(), dados.idade());
-        var pessoa = pessoaRepository.getReferenceById(id);
-        pessoa.atualizarDados(dadosCorrigidos);
-        return new DadosDetalhamentoPessoaDto(pessoa);
+
+        Pessoa pessoaExistente = pessoaRepository.getReferenceById(id);
+        String nomePadronizado = padronizarNome.primeiraLetraMaiuscula(dados.nome());
+        DadosAtualizacaoPessoaDto dadosAtualizacao = new DadosAtualizacaoPessoaDto(nomePadronizado, dados.email(), dados.idade());
+        pessoaExistente.atualizarDados(dadosAtualizacao);
+
+        Pessoa pessoaAtualizada = pessoaRepository.save(pessoaExistente);
+
+        return new DadosDetalhamentoPessoaDto(pessoaAtualizada);
     }
 }
